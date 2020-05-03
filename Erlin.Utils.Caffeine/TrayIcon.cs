@@ -79,13 +79,13 @@ namespace Erlin.Utils.Caffeine
             {
                 _disableEnableMenu.Text = "Enable";
                 _trayIcon.Icon = Resources.Disabled;
-                _trayIcon.Text = "Caffein is disabled!";
+                _trayIcon.Text = "Caffeine is disabled!";
             }
             else
             {
                 _disableEnableMenu.Text = "Disable";
                 _trayIcon.Icon = Resources.Enabled;
-                _trayIcon.Text = "Caffein is enabled!";
+                _trayIcon.Text = "Caffeine is enabled!";
             }
 
             _loop.KeepPcAwake = !_loop.KeepPcAwake;
