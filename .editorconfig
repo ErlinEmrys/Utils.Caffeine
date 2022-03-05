@@ -1,0 +1,194 @@
+# Rules in this file were initially inferred by Visual Studio IntelliCode from the E:\GIT\Code\RuleShifter\RuleShifter.Server.WebApp codebase based on best match to current usage at 05/01/2022
+# You can modify the rules from these initially generated values to suit your own policies
+# You can learn more about editorconfig here: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+[*.cs]
+
+
+#Core editorconfig formatting - indentation
+
+#use soft tabs (spaces) for indentation
+indent_style = space
+
+#Formatting - new line options
+
+#require members of object intializers to be on separate lines
+csharp_new_line_before_members_in_object_initializers = true
+
+#Formatting - spacing options
+
+#require NO space between a cast and the value
+csharp_space_after_cast = false
+#require a space after a keyword in a control flow statement such as a for loop
+csharp_space_after_keywords_in_control_flow_statements = true
+#do not place space characters after the opening parenthesis and before the closing parenthesis of a method call
+csharp_space_between_method_call_parameter_list_parentheses = false
+#place a space character after the opening parenthesis and before the closing parenthesis of a method declaration parameter list.
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+
+#Formatting - wrapping options
+
+#leave code block on single line
+csharp_preserve_single_line_blocks = true
+
+#Style - expression bodied member options
+
+#prefer block bodies for constructors
+csharp_style_expression_bodied_constructors = false:suggestion
+#prefer block bodies for methods
+csharp_style_expression_bodied_methods = false:suggestion
+#prefer expression-bodied members for properties
+csharp_style_expression_bodied_properties = true:suggestion
+
+#Style - Expression-level  preferences
+
+#prefer objects to be initialized using object initializers when possible
+dotnet_style_object_initializer = true:suggestion
+
+#Style - implicit and explicit types
+
+#prefer var over explicit type in all cases, unless overridden by another code style rule
+csharp_style_var_elsewhere = true:silent
+
+#Style - language keyword and framework type options
+
+#prefer the language keyword for local variables, method parameters, and class members, instead of the type name, for types that have a keyword to represent them
+dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
+
+#Style - modifier options
+
+#prefer accessibility modifiers to be declared except for public interface members. This will currently not differ from always and will act as future proofing for if C# adds default interface methods.
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggestion
+
+#Style - Modifier preferences
+
+#when this rule is set to a list of modifiers, prefer the specified ordering.
+csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async:suggestion
+
+#Style - qualification options
+
+#prefer fields not to be prefaced with this. or Me. in Visual Basic
+dotnet_style_qualification_for_field = false:suggestion
+#prefer properties not to be prefaced with this. or Me. in Visual Basic
+dotnet_style_qualification_for_property = false:suggestion
+csharp_style_namespace_declarations=file_scoped:error
+insert_final_newline=true
+csharp_prefer_simple_using_statement=true:error
+csharp_prefer_braces=true:error
+csharp_style_var_for_built_in_types=true:silent
+csharp_style_var_when_type_is_apparent=true:silent
+dotnet_diagnostic.CA1070.severity=warning
+dotnet_diagnostic.CA1001.severity=warning
+dotnet_diagnostic.CA1200.severity=warning
+dotnet_diagnostic.CA1309.severity=warning
+dotnet_diagnostic.CA1507.severity=warning
+dotnet_diagnostic.CA1805.severity=warning
+dotnet_diagnostic.CA1824.severity=warning
+dotnet_diagnostic.CA1825.severity=warning
+dotnet_diagnostic.CA1841.severity=warning
+dotnet_diagnostic.CA1845.severity=warning
+dotnet_diagnostic.CA2016.severity=warning
+dotnet_diagnostic.CA2244.severity=warning
+dotnet_diagnostic.CA2246.severity=warning
+
+[*.{cs,vb}]
+tab_width=4
+indent_size=4
+dotnet_diagnostic.CA1000.severity=warning
+dotnet_diagnostic.CA1010.severity=warning
+dotnet_diagnostic.CA1016.severity=silent
+dotnet_diagnostic.CA1018.severity=warning
+dotnet_diagnostic.CA1036.severity=warning
+dotnet_diagnostic.CA1041.severity=warning
+dotnet_diagnostic.CA1050.severity=silent
+dotnet_diagnostic.CA1051.severity=warning
+dotnet_diagnostic.CA1061.severity=warning
+dotnet_diagnostic.CA1067.severity=warning
+dotnet_diagnostic.CA1068.severity=warning
+dotnet_diagnostic.CA1069.severity=warning
+dotnet_diagnostic.CA1304.severity=warning
+dotnet_diagnostic.CA1305.severity=warning
+dotnet_diagnostic.CA1310.severity=warning
+dotnet_diagnostic.CA2101.severity=warning
+dotnet_diagnostic.CA1401.severity=warning
+dotnet_diagnostic.CA1419.severity=warning
+dotnet_diagnostic.CA1700.severity=silent
+dotnet_diagnostic.CA1712.severity=warning
+dotnet_diagnostic.CA1715.severity=warning
+dotnet_diagnostic.CA1707.severity=warning
+dotnet_diagnostic.CA1710.severity=warning
+dotnet_diagnostic.CA1711.severity=warning
+dotnet_diagnostic.CA1716.severity=error
+dotnet_diagnostic.CA1720.severity=warning
+dotnet_diagnostic.CA1721.severity=error
+dotnet_diagnostic.CA1724.severity=error
+dotnet_diagnostic.CA1725.severity=error
+dotnet_diagnostic.CA1727.severity=warning
+dotnet_diagnostic.CA1806.severity=warning
+dotnet_diagnostic.CA1821.severity=warning
+dotnet_diagnostic.CA1822.severity=warning
+dotnet_diagnostic.CA1826.severity=warning
+dotnet_diagnostic.CA1827.severity=warning
+dotnet_diagnostic.CA1828.severity=warning
+dotnet_diagnostic.CA1829.severity=warning
+dotnet_diagnostic.CA1830.severity=warning
+dotnet_diagnostic.CA1832.severity=warning
+dotnet_diagnostic.CA1833.severity=warning
+dotnet_diagnostic.CA1834.severity=warning
+dotnet_diagnostic.CA1835.severity=warning
+dotnet_diagnostic.CA1836.severity=warning
+dotnet_diagnostic.CA1837.severity=warning
+dotnet_diagnostic.CA1838.severity=warning
+dotnet_diagnostic.CA1839.severity=warning
+dotnet_diagnostic.CA1840.severity=warning
+dotnet_diagnostic.CA1842.severity=warning
+dotnet_diagnostic.CA1843.severity=warning
+dotnet_diagnostic.CA1844.severity=warning
+dotnet_diagnostic.CA1846.severity=warning
+dotnet_diagnostic.CA1847.severity=warning
+dotnet_diagnostic.CA1848.severity=warning
+dotnet_diagnostic.CA2009.severity=warning
+dotnet_diagnostic.CA2011.severity=warning
+dotnet_diagnostic.CA2012.severity=warning
+dotnet_diagnostic.CA3061.severity=warning
+dotnet_diagnostic.CA3075.severity=warning
+dotnet_diagnostic.CA3076.severity=warning
+dotnet_diagnostic.CA3077.severity=warning
+dotnet_diagnostic.CA3147.severity=warning
+dotnet_diagnostic.CA5350.severity=warning
+dotnet_diagnostic.CA5351.severity=warning
+dotnet_diagnostic.CA5359.severity=warning
+dotnet_diagnostic.CA5360.severity=warning
+dotnet_diagnostic.CA5363.severity=warning
+dotnet_diagnostic.CA5364.severity=warning
+dotnet_diagnostic.CA5365.severity=warning
+dotnet_diagnostic.CA5366.severity=warning
+dotnet_diagnostic.CA5368.severity=warning
+dotnet_diagnostic.CA5369.severity=warning
+dotnet_diagnostic.CA5370.severity=warning
+dotnet_diagnostic.CA5371.severity=warning
+dotnet_diagnostic.CA5372.severity=warning
+dotnet_diagnostic.CA5373.severity=warning
+dotnet_diagnostic.CA5374.severity=warning
+dotnet_diagnostic.CA5379.severity=warning
+dotnet_diagnostic.CA5384.severity=warning
+dotnet_diagnostic.CA5385.severity=warning
+dotnet_diagnostic.CA5397.severity=warning
+dotnet_diagnostic.CA1816.severity=warning
+dotnet_diagnostic.CA2201.severity=warning
+dotnet_diagnostic.CA2208.severity=warning
+dotnet_diagnostic.CA2211.severity=warning
+dotnet_diagnostic.CA2215.severity=error
+dotnet_diagnostic.CA2219.severity=warning
+dotnet_diagnostic.CA2229.severity=warning
+dotnet_diagnostic.CA2231.severity=warning
+dotnet_diagnostic.CA2241.severity=warning
+dotnet_diagnostic.CA2242.severity=warning
+dotnet_diagnostic.CA2245.severity=warning
+dotnet_diagnostic.CA2248.severity=warning
+dotnet_diagnostic.CA2249.severity=warning
+dotnet_diagnostic.CA2250.severity=warning
+dotnet_diagnostic.CA2251.severity=warning
+dotnet_diagnostic.CA2253.severity=warning
+dotnet_diagnostic.CA2254.severity=warning
+[*.vb]
+dotnet_diagnostic.CA1047.severity=warning
