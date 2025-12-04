@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Erlin.Utils.Caffeine;
+﻿namespace Erlin.Utils.Caffeine;
 
 public class Program
 {
-    /// <summary>
-    /// The main entry point for the application.
-    /// </summary>
-    [STAThread]
-    public static void Main()
-    {
-        Application.EnableVisualStyles();
-        Application.SetCompatibleTextRenderingDefault(false);
-        Application.Run(new TrayIcon());
-    }
+	/// <summary>
+	/// The main entry point for the application.
+	/// </summary>
+	[ STAThread ]
+	public static void Main()
+	{
+		Application.EnableVisualStyles();
+		Application.SetCompatibleTextRenderingDefault( false );
+		Application.Run( new TrayIcon() );
+	}
 }
