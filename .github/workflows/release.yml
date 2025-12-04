@@ -30,7 +30,7 @@ jobs:
         echo ::set-output name=gitversion::$VERSION
 
     - name: Build
-      run: dotnet publish -p:PublishProfile=Erlin.Utils.Caffeine\Properties\PublishProfiles\Win10DotNetCore.pubxml -p:AssemblyVersion=${{ steps.gitVersion.outputs.gitversion }} -p:FileVersion=${{ steps.gitVersion.outputs.gitversion }} -p:InformationalVersion=${{ steps.gitVersion.outputs.gitfullversion }}
+      run: dotnet publish -r win-x64 -c Release --self-contained false -p:PublishSingleFile=true -p:PublishReadyToRun=false -p:PublishTrimmed=true -p:AssemblyVersion=${{ steps.gitVersion.outputs.gitversion }} -p:FileVersion=${{ steps.gitVersion.outputs.gitversion }} -p:InformationalVersion=${{ steps.gitVersion.outputs.gitfullversion }}
 
     - name: Pulish release
       uses: softprops/action-gh-release@v1
