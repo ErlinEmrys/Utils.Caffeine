@@ -30,13 +30,13 @@ jobs:
         echo ::set-output name=gitversion::$VERSION
 
     - name: Build
-      run: dotnet publish -p:PublishProfile=Erlin.Utils.Caffeine\Properties\PublishProfiles\Win10DotNetCore.pubxml -o PublishRelease -p:AssemblyVersion=${{ steps.gitVersion.outputs.gitversion }} -p:FileVersion=${{ steps.gitVersion.outputs.gitversion }} -p:InformationalVersion=${{ steps.gitVersion.outputs.gitfullversion }}
+      run: dotnet publish -p:PublishProfile=Erlin.Utils.Caffeine\Properties\PublishProfiles\Win10DotNetCore.pubxml -p:AssemblyVersion=${{ steps.gitVersion.outputs.gitversion }} -p:FileVersion=${{ steps.gitVersion.outputs.gitversion }} -p:InformationalVersion=${{ steps.gitVersion.outputs.gitfullversion }}
 
     - name: Pulish release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          PublishRelease\Erlin.Utils.Caffeine.exe
+          bin\publish\Erlin.Utils.Caffeine.exe
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
