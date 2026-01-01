@@ -32,7 +32,7 @@
 
   <ItemGroup>
     <PackageReference Include="Erlin.Lib.Common" Version="2.1.1" />
-    <PackageReference Include="Erlin.Utils.LicenseCompiler" Version="0.0.4" />
+    <PackageReference Include="Erlin.Utils.LicenseCompiler" Version="0.0.10" PrivateAssets="all" IncludeAssets="build;buildTransitive" ExcludeAssets="compile;runtime" />
   </ItemGroup>
 
   <ItemGroup>
