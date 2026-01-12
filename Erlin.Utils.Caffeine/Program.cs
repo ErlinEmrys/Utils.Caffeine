@@ -8,6 +8,7 @@ public class Program
 	[ STAThread ]
 	public static void Main()
 	{
+		Application.SetColorMode( SystemColorMode.Dark );
 		Application.EnableVisualStyles();
 		Application.SetCompatibleTextRenderingDefault( false );
 		Application.Run( new TrayIcon() );

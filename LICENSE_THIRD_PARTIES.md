@@ -38,6 +38,19 @@ Third party licenses
 >>
 >
 
+> Markdig [0.44.0.0]
+> ------------------
+>
+> Homepage: <https://github.com/xoofx/markdig>
+>
+> Authors: Alexandre Mutel
+>
+> Copyright: Alexandre Mutel
+>
+> License:
+>> [BSD-2-Clause](https://spdx.org/licenses/BSD-2-Clause.html)
+>
+
 > Newtonsoft.Json [13.0.0.0]
 > --------------------------
 >

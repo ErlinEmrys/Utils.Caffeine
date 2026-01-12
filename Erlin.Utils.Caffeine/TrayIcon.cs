@@ -11,6 +11,7 @@ public class TrayIcon : ApplicationContext
 	private readonly ToolStripMenuItem _disableEnableMenu;
 	private readonly Win10Loop _loop;
 	private readonly NotifyIcon _trayIcon;
+	private About? _about;
 
 	/// <summary>
 	/// Ctor
@@ -22,6 +23,10 @@ public class TrayIcon : ApplicationContext
 		_disableEnableMenu = new ToolStripMenuItem( "Disable" );
 		_disableEnableMenu.Click += DisableEnableMenu_Click;
 		_ = menu.Items.Add( _disableEnableMenu );
+
+		ToolStripMenuItem aboutMenu = new( "About" );
+		aboutMenu.Click += AboutMenu_Click;
+		_ = menu.Items.Add( aboutMenu );
 
 		ToolStripMenuItem exitMenu = new( "Exit" );
 		exitMenu.Click += ExitMenu_Click;
@@ -82,6 +87,28 @@ public class TrayIcon : ApplicationContext
 	}
 
 	/// <summary>
+	/// Menu About action
+	/// </summary>
+	/// <param name="sender">Event sender</param>
+	/// <param name="e">Event args</param>
+	private void AboutMenu_Click( object? sender, EventArgs e )
+	{
+		if( _about == null )
+		{
+			_about = new About();
+			_about.FormClosed += delegate { _about = null; };
+			_about.Show();
+		}
+
+		if( _about.WindowState == FormWindowState.Minimized )
+		{
+			_about.WindowState = FormWindowState.Normal;
+		}
+
+		_about.BringToFront();
+	}
+
+	/// <summary>
 	/// Menu Exit action
 	/// </summary>
 	/// <param name="sender">Event sender</param>
@@ -91,6 +118,7 @@ public class TrayIcon : ApplicationContext
 		// Hide tray icon, otherwise it will remain shown until user mouses over it
 		_trayIcon.Visible = false;
 
+		_about?.Close();
 		Application.Exit();
 	}
 }

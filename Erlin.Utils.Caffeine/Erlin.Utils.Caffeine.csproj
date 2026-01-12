@@ -1,53 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <UseWindowsForms>true</UseWindowsForms>
-    <TargetFramework>net10.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
-    <DebugType>embedded</DebugType>
-    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
-    <RunAnalyzers>True</RunAnalyzers>
-    <RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
-    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
-    <InvariantGlobalization>true</InvariantGlobalization>
-    <ApplicationIcon>Resources\Caffeine.ico</ApplicationIcon>
-    <Authors>Erlin Emrys</Authors>
-    <Copyright>©Erlin Emrys</Copyright>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<UseWindowsForms>true</UseWindowsForms>
+		<TargetFramework>net10.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+		<DebugType>embedded</DebugType>
+		<ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+		<RunAnalyzers>True</RunAnalyzers>
+		<RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+		<InvariantGlobalization>true</InvariantGlobalization>
+		<ApplicationIcon>Resources\Caffeine.ico</ApplicationIcon>
+		<Authors>Erlin Emrys</Authors>
+		<Copyright>©Erlin Emrys</Copyright>
+		<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\LICENSE.md" Link="LICENSE.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="..\LICENSE_THIRD_PARTIES.md" Link="LICENSE_THIRD_PARTIES.md">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Erlin.Lib.Common" Version="2.1.1" />
+		<PackageReference Include="Erlin.Utils.LicenseCompiler" Version="0.0.21" PrivateAssets="all" IncludeAssets="build;buildTransitive" ExcludeAssets="compile;runtime" />
+		<PackageReference Include="Markdig" Version="0.44.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Erlin.Lib.Common" Version="2.1.1" />
-    <PackageReference Include="Erlin.Utils.LicenseCompiler" Version="0.0.18" PrivateAssets="all" IncludeAssets="build;buildTransitive" ExcludeAssets="compile;runtime" />
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="Resources.resx" />
+		<Compile Update="About.cs" SubType="Form" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+		<EmbeddedResource Include="..\LICENSE.md" Link="LICENSE.md" Pack="True" PackagePath="" />
+		<EmbeddedResource Include="..\LICENSE_THIRD_PARTIES.md" Link="LICENSE_THIRD_PARTIES.md" Pack="True" PackagePath="" />
+	</ItemGroup>
 
 </Project>
