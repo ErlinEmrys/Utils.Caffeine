@@ -32,11 +32,14 @@ jobs:
     - name: Build
       run: dotnet publish -r win-x64 -c Release --self-contained false -p:PublishSingleFile=true -p:PublishReadyToRun=false -p:PublishTrimmed=false -p:AssemblyVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:FileVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:InformationalVersion=${{ steps.gitVersion.outputs.gitFullVersion }} -p:PublishDir=PublishRelease
 
+    - name: List files (Debug)
+      run: Get-ChildItem -Recurse
+
     - name: Pulish release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          \Erlin.Utils.Caffeine\PublishRelease\Erlin.Utils.Caffeine.exe
+          **/*
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
