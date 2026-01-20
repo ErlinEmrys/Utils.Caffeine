@@ -30,7 +30,7 @@ jobs:
         echo "gitShortVersion=$VERSION" >> $GITHUB_OUTPUT
 
     - name: Build
-      run: dotnet publish -r win-x64 -c Release --self-contained false -p:PublishSingleFile=true -p:PublishReadyToRun=false -p:PublishTrimmed=false -p:AssemblyVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:FileVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:InformationalVersion=${{ steps.gitVersion.outputs.gitFullVersion }} -p:PublishDir=PublishRelease
+      run: dotnet publish -r win-x64 -c Release -p:PublishSingleFile=true -p:SelfContained=false -p:PublishReadyToRun=false -p:PublishTrimmed=false -p:AssemblyVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:FileVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:InformationalVersion=${{ steps.gitVersion.outputs.gitFullVersion }} -p:PublishDir=PublishRelease
 
     - name: List files (Debug)
       run: cd .\Erlin.Utils.Caffeine\PublishRelease\; Get-ChildItem -Recurse
