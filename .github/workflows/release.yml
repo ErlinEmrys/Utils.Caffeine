@@ -37,6 +37,6 @@ jobs:
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: |
-          PublishRelease\Erlin.Utils.Caffeine.exe
+          Erlin.Utils.Caffeine\PublishRelease\Erlin.Utils.Caffeine.exe
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
