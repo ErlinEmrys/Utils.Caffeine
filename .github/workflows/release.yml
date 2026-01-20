@@ -30,7 +30,7 @@ jobs:
         echo "gitShortVersion=$VERSION" >> $GITHUB_OUTPUT
 
     - name: Build
-      run: dotnet publish -r win-x64 -c Release --self-contained false -p:PublishSingleFile=true -p:PublishReadyToRun=false -p:PublishTrimmed=false -p:AssemblyVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:FileVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:InformationalVersion=${{ steps.gitVersion.outputs.gitFullVersion }} -o PublishRelease
+      run: dotnet publish -r win-x64 -c Release --self-contained false -p:PublishSingleFile=true -p:PublishReadyToRun=false -p:PublishTrimmed=false -p:AssemblyVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:FileVersion=${{ steps.gitVersion.outputs.gitShortVersion }} -p:InformationalVersion=${{ steps.gitVersion.outputs.gitFullVersion }} -p:PublishDir=PublishRelease
 
     - name: Pulish release
       uses: softprops/action-gh-release@v1
