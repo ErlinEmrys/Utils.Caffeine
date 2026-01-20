@@ -16,16 +16,20 @@ public partial class About : Form
 	public About()
 	{
 		InitializeComponent();
-		Icon = Resources.Caffeine;
-		Text = "About " + CurrentAssemly.GetName().Name;
-
-		labelTitle.Text = CurrentAssemly.GetName().Name;
-		labelVersion.Text = CurrentAssemly.GetName().Version?.ToString();
 	}
 
+	/// <summary>
+	///    Action on form load
+	/// </summary>
 	protected override void OnLoad( EventArgs e )
 	{
 		base.OnLoad( e );
+
+		Icon = Resources.Caffeine;
+		Text = @"About " + CurrentAssemly.GetName().Name;
+
+		labelTitle.Text = CurrentAssemly.GetName().Name;
+		labelVersion.Text = CurrentAssemly.GetName().Version?.ToString();
 
 		webBrowserLicense.DocumentText = GetEmbededFile( "Erlin.Utils.Caffeine.LICENSE.md" );
 		webBrowserThirdParties.DocumentText = GetEmbededFile( "Erlin.Utils.Caffeine.LICENSE_THIRD_PARTIES.md" );
